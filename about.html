@@ -27,47 +27,54 @@
             border-radius: 50%;
             margin-bottom: 10px;
         }
+
+        /* Loading screen styles */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #loading-text {
+            color: #fff;
+            font-size: 24px;
+        }
     </style>
 </head>
 <body class="dark-theme">
-    <div class="container">
-        <div class="row justify-content-around mt-5">
-            <div class="col-md-5 light-window mb-4">
-                <img src="jonnelle-yankovich-c7TBD3PvoaQ-unsplash.jpg" alt="Team Member 1">
-                <h3>Russell-VZ</h3>
-                <p>Researcher</p>
-                <p>programmer,Data Analysor, researcher, cofounder, studing Math</p>
-            </div>
-            <div class="col-md-5 light-window mb-4">
-                <img src="sergio-de-paula-c_GmwfHBDzk-unsplash.jpg" alt="Team Member 2">
-                <h3>Mohsen-MR</h3>
-                <p>Researcher</p>
-                <p>Data Analysor, reseacher, cofounder, Studing Math</p>
-            </div>
-        </div>
-        <div class="row justify-content-around">
-            <div class="col-md-5 light-window mb-4">
-                <img src="jack-finnigan-rriAI0nhcbc-unsplash.jpg" alt="Team Member 3">
-                <h3>Matin-V</h3>
-                <p>Researcher</p>
-                <p>Programmer, researcher, Data Analysor, cofounder, Studying Cs-Math</p>
-            </div>
-            <div class="col-md-5 light-window mb-4">
-                <img src="imansyah-muhamad-putera-KchIV_GDy6U-unsplash.jpg" alt="Team Member 4">
-                <h3>Alireza-QR</h3>
-                <p>Programmer, researcher, Data Analysor, cofounder, Studying Math</p>
-                <p></p>
-            </div>
-        </div>
+    <!-- Loading screen -->
+    <div id="loading-screen">
+        <div id="loading-text">2MAR PROVIE ...</div>
     </div>
 
-
-
+    <!-- Main content (hidden initially) -->
+    <div class="container" style="display: none;">
+        <!-- Your existing content here -->
+    </div>
 
     <!-- Include Bootstrap JS and jQuery (for the Bootstrap components) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    
+    <script>
+        // Wait for the page to load
+        window.onload = function() {
+            // Hide the loading screen
+            var loadingScreen = document.getElementById("loading-screen");
+            loadingScreen.style.display = "none";
+            
+            // Show the main content
+            var mainContent = document.querySelector(".container");
+            mainContent.style.display = "block";
+        };
+    </script>
 </body>
 </html>
